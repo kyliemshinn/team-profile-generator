@@ -25,23 +25,23 @@ const managerSection = [
     }
 ]
 
-const employeeSection = [
-    {
-        type: 'input',
-        message: "What is the employees name? ",
-        name: 'name',
-    },
-    {
-        type: 'input',
-        message: "What is the employees employee ID? ",
-        name: 'ID',
-    },
-    {
-        type: 'input',
-        message: "What is the employees email? ",
-        name: 'email',
-    },
-]
+// const employeeSection = [
+//     {
+//         type: 'input',
+//         message: "What is the employees name? ",
+//         name: 'name',
+//     },
+//     {
+//         type: 'input',
+//         message: "What is the employees employee ID? ",
+//         name: 'ID',
+//     },
+//     {
+//         type: 'input',
+//         message: "What is the employees email? ",
+//         name: 'email',
+//     },
+// ]
 
 const engineerSection = [
     {
@@ -88,6 +88,15 @@ const internSection = [
         name: 'school',
     }
 ]
+
+const initialQuestion = [
+    {
+      type: 'list',
+      name: 'choices',
+      message: 'Would you like to add: ',
+      choices: ['An Engineer', 'An Intern', 'Done'],
+    }
+  ]
 
 
 //file system to get it to send to the generate html file
