@@ -1,24 +1,6 @@
 const inquirer = require('inquirer');
 
-
-const employeeSection = [
-    {
-        type: 'input',
-        message: "What is the employees name? ",
-        name: 'name',
-    },
-    {
-        type: 'input',
-        message: "What is the employees employee ID? ",
-        name: 'ID',
-    },
-    {
-        type: 'input',
-        message: "What is the employees email? ",
-        name: 'email',
-    },
-]
-
+//section questions
 const managerSection = [
 
     {
@@ -41,6 +23,24 @@ const managerSection = [
         message: "What is the managers office number? ",
         name: 'number',
     }
+]
+
+const employeeSection = [
+    {
+        type: 'input',
+        message: "What is the employees name? ",
+        name: 'name',
+    },
+    {
+        type: 'input',
+        message: "What is the employees employee ID? ",
+        name: 'ID',
+    },
+    {
+        type: 'input',
+        message: "What is the employees email? ",
+        name: 'email',
+    },
 ]
 
 const engineerSection = [
@@ -88,3 +88,9 @@ const internSection = [
         name: 'school',
     }
 ]
+
+
+//file system to get it to send to the generate html file
+
+
+//section to generate each section questions above- reference readme generator for format
