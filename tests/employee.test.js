@@ -1,16 +1,16 @@
 const Employee = require("../lib/employee");
 
 
-describe("Employee", () => {
+describe("employee", () => {
     describe("input information", () => {
 
       it("should show the name, ID, and email that is inputted on command line", () => {
   
-        const testEmployee = new Employee("Kylie", "8979", "test@gmail.com");
+        const employee = new Employee("Kylie", "8979", "test@gmail.com");
   
-        expect(testEmployee.getName()).toEqual("kylie");
-        expect(testEmployee.getID()).toEqual("8979");
-        expect(testEmployee.getEmail()).toEqual("test@gmail.com");
+        expect(employee.getName()).toEqual("kylie");
+        expect(employee.getID()).toEqual("8979");
+        expect(employee.getEmail()).toEqual("test@gmail.com");
     
       });
     })
@@ -20,8 +20,8 @@ describe("employee role", () => {
 
     it("should return the role of Employee", () => {
 
-      const testEmployee = new Employee("kylie", "8979", "test@gmail.com");
+      const employee = new Employee("kylie", "8979", "test@gmail.com");
       
-      expect(testEmployee.getRole()).toEqual("Employee");
+      expect(employee.getRole()).toEqual("Employee");
     });
 });
