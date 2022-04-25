@@ -1,80 +1,55 @@
 function showManagerCard(manager) {
-  return `<!-- <div class="card" style="width: 18rem;">
+  return `<div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">Manager: ${manager.getName()}</h5>
       <p class="card-text">ID: ${manager.getId()}</p>
       <p class="card-text">ID: ${manager.getOfficeNumber()}</p>
       <a href="${manager.getEmail()}" class="card-link">${manager.getEmail()}</a>
     </div>
-  </div> -->`;
+  </div>`;
 }
 
-// function showEmployeeCard(employee) {
-//   return `<!-- <div class="card" style="width: 18rem;">
-//     <div class="card-body">
-//       <h5 class="card-title">Manager: ${employee.getName()}</h5>
-//       <p class="card-text">ID: ${employee.getID()}</p>
-//       <a href="${employee.getEmail()}" class="card-link">${employee.getEmail()}</a>
-//     </div>
-//   </div> -->`;
-// }
-
 function showEngineerCard(engineer) {
-  return `<!-- <div class="card" style="width: 18rem;">
+  return `<div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">Manager: ${engineer.getName()}</h5>
       <p class="card-text">ID: ${engineer.getId()}</p>
       <a href="${engineer.getGithub()}" class="card-link">${engineer.getGithub()}</a>
       <a href="${engineer.getEmail()}" class="card-link">${engineer.getEmail()}</a>
     </div>
-  </div> -->`;
+  </div>`;
 }
 
 function showInternCard(intern) {
-  return `<!-- <div class="card" style="width: 18rem;">
+  return `<div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">Manager: ${intern.getName()}</h5>
       <p class="card-text">ID: ${intern.getId()}</p>
       <a href="${intern.getGithub()}" class="card-link">${intern.getGithub()}</a>
       <a href="${intern.getEmail()}" class="card-link">${intern.getEmail()}</a>
     </div>
-  </div> -->`;
+  </div>`;
 }
 
 function mainHTML(data) {
-  const htmlArr = [];
+  //create string for information to filter through and then append to html
+  let htmlStr = ''
 
-  for (let i = 0; i < data.length; i++) {
-    const employee = data[i];
-    const teamMember = employee.getRole();
-    //generate manager card if manager is defined
-    if (teamMember === "Manager") {
-      const managerCard = showManagerCard(employee);
-      
-      htmlArr.push(managerCard);
+  for ( i = 0; i < data.length; i++ ) {
+    if (data[i].getRole() === 'Manager'){
+      htmlStr = htmlStr + showManagerCard(data[i])
     }
-    //generate engineer card if engineer is defined
-    if (teamMember === "Engineer") {
-      const engineerCard = showEngineerCard(employee);
-      
-      htmlArr.push(engineerCard);
+    if (data[i].getRole() === 'Engineer'){
+      htmlStr = htmlStr + showEngineerCard(data[i])
     }
-    //generate intern card intern is define
-    if (teamMember === "Intern") {
-      const internCard = showInternCard(employee);
+    if (data[i].getRole() === 'Intern'){
+      htmlStr = htmlStr + showInternCard(data[i])
     }
-
-    htmlArr.push(internCard);
-  }
-  // joining all team members together from above
-  const teamMembers = htmlArr.join("");
-
-  //return the info to generate html function to append
-  const generateHtmlMembers = generateHtml(teamMembers);
-  return generateHtmlMembers;
+  } return htmlStr
 }
 
-function generateHtml(teamMembers) {
+
+function htmlLayout(data) {
   return `
   <!DOCTYPE html>
 <html lang="en">
@@ -93,11 +68,11 @@ function generateHtml(teamMembers) {
     </header>
     
     <main>
-    <div class="container">
-    <div class="row" id="teamMemberCards">
-        ${teamMembers}
-    </div>
-    </div>
+      <div class="container">
+        <div class="row justify-content-center" id="team-cards">
+          ${mainHTML(data)}
+        </div>
+      </div>
     </main>
     
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
@@ -106,4 +81,4 @@ function generateHtml(teamMembers) {
 </html>`
 };
 
-module.exports = mainHTML; 
+module.exports = htmlLayout; 

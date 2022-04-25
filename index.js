@@ -3,7 +3,7 @@ const fs = require("fs");
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
-const Employee = require("./lib/employee");
+//const Employee = require("./lib/employee");
 const generateHtml = require("./src/generatehtml");
 
 //when new team members are added, push to array
@@ -65,7 +65,7 @@ const internSection = [
   {
     type: "input",
     message: "What is the intern employee ID? ",
-    name: "ID",
+    name: "id",
   },
   {
     type: "input",
@@ -88,19 +88,6 @@ const initialQuestion = [
   },
 ];
 
-function initQuestionsChoice() {
-  inquirer.prompt(initialQuestion)
-  .then((response) => {
-    if (response.choices == "An Engineer") {
-      engineerInfo();
-    } else if (response.choices == "An Intern") {
-      internInfo();
-    } else {
-      console.log("team members have been generated");
-      writeFile("./dist/index.html", generateHtml({ ...response }));
-    }
-  });
-}
 
 //file system to get it to send to the generate html file
 function writeFile(fileName, data) {
@@ -114,7 +101,7 @@ function managersInfo() {
   .then((response) => {
     const manager = new Manager(
       response.name,
-      response.ID,
+      response.id,
       response.email,
       response.number
     );
@@ -128,7 +115,7 @@ function engineerInfo() {
   .then((response) => {
     const engineer = new Engineer(
       response.name,
-      response.ID,
+      response.id,
       response.email,
       response.github
     );
@@ -142,7 +129,7 @@ function internInfo() {
   .then((response) => {
     const intern = new Intern(
       response.name,
-      response.ID,
+      response.id,
       response.email,
       response.school
     );
@@ -150,5 +137,19 @@ function internInfo() {
     return initQuestionsChoice();
   });
 }
+
+function initQuestionsChoice() {
+    inquirer.prompt(initialQuestion)
+    .then((response) => {
+      if (response.choices == "An Engineer") {
+        engineerInfo();
+      } else if (response.choices == "An Intern") {
+        internInfo();
+      } else {
+        console.log("team members have been generated");
+        writeFile("./dist/index.html", generateHtml(teamMembersarr));
+      }
+    });
+  }
 
 managersInfo();
