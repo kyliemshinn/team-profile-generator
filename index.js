@@ -19,7 +19,7 @@ const managerSection = [
   {
     type: "input",
     message: "What is the managers employee ID? ",
-    name: "ID",
+    name: "id",
   },
   {
     type: "input",
@@ -42,7 +42,7 @@ const engineerSection = [
   {
     type: "input",
     message: "What is the engineer employee ID? ",
-    name: "ID",
+    name: "id",
   },
   {
     type: "input",

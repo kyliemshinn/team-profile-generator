@@ -15,6 +15,7 @@ function showEngineerCard(engineer) {
       <h5 class="card-title">Engineer: ${engineer.getName()}</h5>
       <p class="card-text">ID: ${engineer.getId()}</p>
       <a href="${engineer.getGithub()}" class="card-link">Github: ${engineer.getGithub()}</a>
+      <br>
       <a href="${engineer.getEmail()}" class="card-link">Email: ${engineer.getEmail()}</a>
     </div>
   </div>`;
@@ -26,6 +27,7 @@ function showInternCard(intern) {
       <h5 class="card-title">Intern: ${intern.getName()}</h5>
       <p class="card-text">ID: ${intern.getId()}</p>
       <a href="${intern.getSchool()}" class="card-link">Github: ${intern.getSchool()}</a>
+      <br>
       <a href="${intern.getEmail()}" class="card-link">Email: ${intern.getEmail()}</a>
     </div>
   </div>`;
