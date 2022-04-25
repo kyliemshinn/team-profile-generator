@@ -15,6 +15,7 @@
 - [Contributors](#contributors)
 - [Tests](#tests)
 - [Questions](#questions)
+
   
   ## Description
   
@@ -34,7 +35,7 @@
   ## Tests
 
   The user will need to install jest. Reference video below for tutorial:
-  
+
   ![test video](./dist/jest-test-teamgenerator.gif)
 
   ## Technologies Used
