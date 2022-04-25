@@ -29,12 +29,21 @@
   Please reference the video to see the proper usage for the Team Member generator.
   For a full video with audio of the project, go to ADD VIDEO.
 
-  *****add GIF HERE*****
+  ![team profile video](./dist/team-generator-gif.gif)
 
   ## Tests
 
-  The user will need to install jest 
+  The user will need to install jest. Reference video below for tutorial:
+  
+  ![test video](./dist/jest-test-teamgenerator.gif)
 
+  ## Technologies Used
+  
+  - HTML
+  - CSS
+  - Javascript
+  - Node.js
+  - Jest
 
   ## Contributors
   
