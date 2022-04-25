@@ -112,13 +112,13 @@ function writeFile(fileName, data) {
 function managersInfo() {
   inquirer.prompt(managerSection)
   .then((response) => {
-    const managerResponse = new Manager(
+    const manager = new Manager(
       response.name,
       response.ID,
       response.email,
       response.number
     );
-    teamMembersarr.push(managerResponse);
+    teamMembersarr.push(manager);
     return initQuestionsChoice();
   });
 }
