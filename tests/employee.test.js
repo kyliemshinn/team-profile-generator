@@ -6,10 +6,10 @@ describe("employee", () => {
 
       it("should show the name, ID, and email that is inputted on command line", () => {
   
-        const employee = new Employee("Kylie", "8979", "test@gmail.com");
+        const employee = new Employee("kylie", "8979", "test@gmail.com");
   
         expect(employee.getName()).toEqual("kylie");
-        expect(employee.getID()).toEqual("8979");
+        expect(employee.getId()).toEqual("8979");
         expect(employee.getEmail()).toEqual("test@gmail.com");
     
       });

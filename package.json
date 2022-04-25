@@ -1,5 +1,18 @@
 {
-  "dependencies": {
-    "inquirer": "^8.2.2"
-  }
+    "name": "team-profile-generator",
+    "version": "1.0.0",
+    "description": "web app that will generate team members from user input",
+    "main": "index.js",
+    "directories": {
+        "lib": "lib"
+    },
+    "scripts": {
+        "test": "jest"
+    },
+    "dependencies": {
+        "inquirer": "^8.2.2"
+    },
+    "devDependencies": {
+        "jest": "^27.5.1"
+    }
 }
