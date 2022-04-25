@@ -1,0 +1,16 @@
+
+* {
+    color: #5e5656;
+    background-color: #ebf4f6;
+}
+
+h1 {
+    text-align: center;
+    background-color: #76b4bd;
+    padding: 20px;
+}
+
+.teamcards {
+   background-color: white; 
+   margin: 10px;
+}

@@ -1,6 +1,6 @@
 function showManagerCard(manager) {
   return `<div class="card" style="width: 18rem;">
-    <div class="card-body">
+    <div class="card-body teamcards">
       <h5 class="card-title">Manager: ${manager.getName()}</h5>
       <p class="card-text">ID: ${manager.getId()}</p>
       <p class="card-text">Office Number: ${manager.getOfficeNumber()}</p>
@@ -11,7 +11,7 @@ function showManagerCard(manager) {
 
 function showEngineerCard(engineer) {
   return `<div class="card" style="width: 18rem;">
-    <div class="card-body">
+    <div class="card-body teamcards">
       <h5 class="card-title">Engineer: ${engineer.getName()}</h5>
       <p class="card-text">ID: ${engineer.getId()}</p>
       <a href="${engineer.getGithub()}" class="card-link">Github: ${engineer.getGithub()}</a>
@@ -22,10 +22,10 @@ function showEngineerCard(engineer) {
 
 function showInternCard(intern) {
   return `<div class="card" style="width: 18rem;">
-    <div class="card-body">
+    <div class="card-body teamcards">
       <h5 class="card-title">Intern: ${intern.getName()}</h5>
       <p class="card-text">ID: ${intern.getId()}</p>
-      <a href="${intern.getGithub()}" class="card-link">Github: ${intern.getGithub()}</a>
+      <a href="${intern.getSchool()}" class="card-link">Github: ${intern.getSchool()}</a>
       <a href="${intern.getEmail()}" class="card-link">Email: ${intern.getEmail()}</a>
     </div>
   </div>`;
@@ -58,7 +58,7 @@ function htmlLayout(data) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../dist/style.css">
     <title>Team Member Generator</title>
 
 </head>

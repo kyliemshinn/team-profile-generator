@@ -22,7 +22,7 @@
   
   ## Installation
   
-  This project will need to be installed by npm install as well as inquirer will need to be install for use of this web app.
+  This project will require the user to download inquirer and jest in order to run the program properly after cloning it down.
   
   ## Usage 
   
@@ -30,6 +30,10 @@
   For a full video with audio of the project, go to ADD VIDEO.
 
   *****add GIF HERE*****
+
+  ## Tests
+
+  The user will need to install jest 
 
 
   ## Contributors
