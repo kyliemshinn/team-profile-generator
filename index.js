@@ -1,10 +1,10 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateHTML = require("./src/generateHTML.js");
-const manager = require('./lib/manager');
-const engineer = require('./lib/engineer');
-const intern = require('./lib/intern');
-const employee = require('./lib/employee');
+const generateHtml = require("./src/generateHTML.js");
+const Manager = require('./lib/manager');
+const Engineer = require('./lib/engineer');
+const Intern = require('./lib/intern');
+const Employee = require('./lib/employee');
 
 //when new team members are added, push to array
 const teamMembersarr= [];
@@ -95,26 +95,23 @@ function initQuestionsChoice() {
         .prompt(initialQuestion).then((response) => {
             if(response.choices == "An Engineer") {
               engineerInfo();
-            } else if (answers.choices == "An Intern") {
+            } else if (response.choices == "An Intern") {
               internInfo();
             } else {
-              writeFile();
+                console.log('team members have been generated')
+              writeFile("./dist/index.html", generateHtml({...response}));
             }
         })
+
 }
 
 
 //file system to get it to send to the generate html file
+function writeFile(fileName, data) {
 
-function writeFile() {
-    dataInput = generateHTML(teamMembersarr)
-	fs.writeFile('./dist/index.html', dataInput, (err) => {
-		if (err) {
-			console.log(err);
-		} else {
-			console.log('Your team member profile has been generated!');
-		}
-	});
+        //only take in two parameters, will create a new file if one does not exist, join all the segments into one path, and grab the data
+       return fs.writeFileSync((fileName), data);
+        
 };
 
 //to generate each section questions above- reference readme generator for format
@@ -122,8 +119,8 @@ function managersInfo() {
 
     inquirer.prompt(managerSection)
     .then((response) => {
-        response = new Manager(response.name, response.id, response.email, response.number)
-        teamMembersarr.push(response);
+        const managerResponse = new Manager(response.name, response.ID, response.email, response.number)
+        teamMembersarr.push(managerResponse);
         return initQuestionsChoice();
     })
     
@@ -133,8 +130,8 @@ function engineerInfo() {
 
     inquirer.prompt(engineerSection)
     .then((response) => {
-        response = new Engineers(response.name, response.id, response.email, response.github)
-        teamMembersarr.push(response);
+        const engineer = new Engineer(response.name, response.ID, response.email, response.github)
+        teamMembersarr.push(engineer);
         return initQuestionsChoice();
     })
     
@@ -144,11 +141,12 @@ function internInfo() {
 
     inquirer.prompt(internSection)
     .then((response) => {
-        response = new Intern(response.name, response.id, response.email, response.github)
-        teamMembersarr.push(response);
+        const intern = new Intern(response.name, response.ID, response.email, response.school)
+        teamMembersarr.push(intern);
         return initQuestionsChoice();
     })
     
 };
 
 managersInfo();
+
