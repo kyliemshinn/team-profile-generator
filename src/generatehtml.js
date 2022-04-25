@@ -3,8 +3,8 @@ function showManagerCard(manager) {
     <div class="card-body">
       <h5 class="card-title">Manager: ${manager.getName()}</h5>
       <p class="card-text">ID: ${manager.getId()}</p>
-      <p class="card-text">ID: ${manager.getOfficeNumber()}</p>
-      <a href="${manager.getEmail()}" class="card-link">${manager.getEmail()}</a>
+      <p class="card-text">Office Number: ${manager.getOfficeNumber()}</p>
+      <a href="${manager.getEmail()}" class="card-link">Email: ${manager.getEmail()}</a>
     </div>
   </div>`;
 }
@@ -12,10 +12,10 @@ function showManagerCard(manager) {
 function showEngineerCard(engineer) {
   return `<div class="card" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title">Manager: ${engineer.getName()}</h5>
+      <h5 class="card-title">Engineer: ${engineer.getName()}</h5>
       <p class="card-text">ID: ${engineer.getId()}</p>
-      <a href="${engineer.getGithub()}" class="card-link">${engineer.getGithub()}</a>
-      <a href="${engineer.getEmail()}" class="card-link">${engineer.getEmail()}</a>
+      <a href="${engineer.getGithub()}" class="card-link">Github: ${engineer.getGithub()}</a>
+      <a href="${engineer.getEmail()}" class="card-link">Email: ${engineer.getEmail()}</a>
     </div>
   </div>`;
 }
@@ -23,10 +23,10 @@ function showEngineerCard(engineer) {
 function showInternCard(intern) {
   return `<div class="card" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title">Manager: ${intern.getName()}</h5>
+      <h5 class="card-title">Intern: ${intern.getName()}</h5>
       <p class="card-text">ID: ${intern.getId()}</p>
-      <a href="${intern.getGithub()}" class="card-link">${intern.getGithub()}</a>
-      <a href="${intern.getEmail()}" class="card-link">${intern.getEmail()}</a>
+      <a href="${intern.getGithub()}" class="card-link">Github: ${intern.getGithub()}</a>
+      <a href="${intern.getEmail()}" class="card-link">Email: ${intern.getEmail()}</a>
     </div>
   </div>`;
 }
