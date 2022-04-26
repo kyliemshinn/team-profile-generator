@@ -26,7 +26,7 @@ function showInternCard(intern) {
     <div class="card-body teamcards">
       <h5 class="card-title">Intern: ${intern.getName()}</h5>
       <p class="card-text">ID: ${intern.getId()}</p>
-      <a href="${intern.getSchool()}" class="card-link">Github: ${intern.getSchool()}</a>
+      <a href="${intern.getSchool()}" class="card-link">School: ${intern.getSchool()}</a>
       <br>
       <a href="${intern.getEmail()}" class="card-link">Email: ${intern.getEmail()}</a>
     </div>

@@ -29,7 +29,7 @@
   ## Usage 
   
   Please reference the video to see the proper usage for the Team Member generator.
-  For a full video with audio of the project, go to ADD VIDEO.
+  For a full video with audio of the project, go to https://youtu.be/2pwP-nt8NWE.
 
   ![team profile video](./dist/team-generator-gif.gif)
 
