@@ -14,6 +14,7 @@
 - [License](#license)
 - [Contributors](#contributors)
 - [Tests](#tests)
+- [Technologies Used](#technologies-used)
 - [Questions](#questions)
 
   
